@@ -11,7 +11,24 @@
     <title>Tomeshack</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <nav class="navbar navbar-light navbar-expand-sm bg-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+        <a href="/" class="navbar-brand">
+            Tomeshack</a>
+
+        <!-- On small screens, a button to toggle nav dropdown -->
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- List of options, in dropdown on small screens, on navbar on larger ones -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- jQuery and Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

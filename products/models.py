@@ -20,3 +20,6 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_description(self):
+        return f'"{self.description[:40]}..."'

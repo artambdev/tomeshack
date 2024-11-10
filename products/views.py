@@ -13,7 +13,7 @@ def book_list(request):
     return render(request, 'books.html', context)
 
 
-def view_post(request, title):
+def view_book(request, title):
     """
     View function to render book's info page
     """

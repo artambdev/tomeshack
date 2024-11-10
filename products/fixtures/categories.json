@@ -4,7 +4,7 @@
        "model":"products.category",
        "fields":{
           "name":"poetry",
-          "friendly_name":"Poetry"
+          "visible_name":"Poetry"
        }
     },
     {
@@ -12,7 +12,7 @@
        "model":"products.category",
        "fields":{
           "name":"sequential_art",
-          "friendly_name":"Sequential Art"
+          "visible_name":"Sequential Art"
        }
     },
     {
@@ -20,7 +20,7 @@
        "model":"products.category",
        "fields":{
           "name":"young_adult",
-          "friendly_name":"Young Adult"
+          "visible_name":"Young Adult"
        }
     },
     {
@@ -28,7 +28,7 @@
        "model":"products.category",
        "fields":{
           "name":"history",
-          "friendly_name":"History"
+          "visible_name":"History"
        }
     },
     {
@@ -36,7 +36,7 @@
        "model":"products.category",
        "fields":{
           "name":"mystery",
-          "friendly_name":"Mystery"
+          "visible_name":"Mystery"
        }
     },
     {
@@ -44,7 +44,7 @@
        "model":"products.category",
        "fields":{
           "name":"deals",
-          "friendly_name":"Deals"
+          "visible_name":"Deals"
        }
     },
     {
@@ -52,7 +52,7 @@
        "model":"products.category",
        "fields":{
           "name":"fiction",
-          "friendly_name":"Fiction"
+          "visible_name":"Fiction"
        }
     },
     {
@@ -60,7 +60,7 @@
        "model":"products.category",
        "fields":{
           "name":"business",
-          "friendly_name":"Business"
+          "visible_name":"Business"
        }
     },
     {
@@ -68,7 +68,7 @@
        "model":"products.category",
        "fields":{
           "name":"romance",
-          "friendly_name":"Romance"
+          "visible_name":"Romance"
        }
     },
     {
@@ -76,7 +76,7 @@
        "model":"products.category",
        "fields":{
           "name":"politics",
-          "friendly_name":"Politics"
+          "visible_name":"Politics"
        }
     },
     {
@@ -84,7 +84,7 @@
        "model":"products.category",
        "fields":{
           "name":"science_fiction",
-          "friendly_name":"Science Fiction"
+          "visible_name":"Science Fiction"
        }
     },
     {
@@ -92,7 +92,7 @@
        "model":"products.category",
        "fields":{
           "name":"travel",
-          "friendly_name":"Travel"
+          "visible_name":"Travel"
        }
     },
     {
@@ -100,47 +100,47 @@
        "model":"products.category",
        "fields":{
           "name":"music",
-          "friendly_name":"Music"
-       }
-    },
-    {
-       "pk":13,
-       "model":"products.category",
-       "fields":{
-          "name":"childrens",
-          "friendly_name":"For Children"
+          "visible_name":"Music"
        }
     },
     {
        "pk":14,
        "model":"products.category",
        "fields":{
+          "name":"childrens",
+          "visible_name":"For Children"
+       }
+    },
+    {
+       "pk":15,
+       "model":"products.category",
+       "fields":{
           "name":"nonfiction",
-          "friendly_name":"Non-Fiction"
-       }
-    },
-    {
-       "pk":15,
-       "model":"products.category",
-       "fields":{
-          "name":"food",
-          "friendly_name":"Food & Drink"
-       }
-    },
-    {
-       "pk":15,
-       "model":"products.category",
-       "fields":{
-          "name":"art",
-          "friendly_name":"Art"
+          "visible_name":"Non-Fiction"
        }
     },
     {
        "pk":16,
        "model":"products.category",
        "fields":{
+          "name":"food",
+          "visible_name":"Food & Drink"
+       }
+    },
+    {
+       "pk":17,
+       "model":"products.category",
+       "fields":{
+          "name":"art",
+          "visible_name":"Art"
+       }
+    },
+    {
+       "pk":18,
+       "model":"products.category",
+       "fields":{
           "name":"thriller",
-          "friendly_name":"Thriller"
+          "visible_name":"Thriller"
        }
     }
  ]

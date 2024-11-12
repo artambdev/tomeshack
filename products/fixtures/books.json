@@ -4,6 +4,7 @@
        "model":"products.book",
        "fields":{
           "title":"A Light in the Attic",
+          "uid":"vsdlakvhgrjklhg",
           "price":52.0,
           "stars":3,
           "category":1,
@@ -15,6 +16,7 @@
        "model":"products.book",
        "fields":{
           "title":"Scott Pilgrim's Precious Little Life",
+          "uid":"slhjkgvbsJKEGFLIUWEy",
           "price":52.0,
           "stars":5,
           "category":2,
@@ -26,6 +28,7 @@
        "model":"products.book",
        "fields":{
           "title":"Set Me Free",
+          "uid":"sadhkjvgakiregyvrbjhev",
           "price":17.0,
           "stars":5,
           "category":3,
@@ -37,6 +40,7 @@
        "model":"products.book",
        "fields":{
           "title":"Sapiens: A Brief History of Mankind",
+          "uid":"asfkjhlgewaljkhgvre",
           "price":54.0,
           "stars":5,
           "category":4,
@@ -48,6 +52,7 @@
        "model":"products.book",
        "fields":{
           "title":"Shakespeare's Sonnets",
+          "uid":"rvhrekdjueughelkurhgliu",
           "price":21.0,
           "stars":4,
           "category":1,
@@ -59,6 +64,7 @@
        "model":"products.book",
        "fields":{
           "title":"Sharp Objects",
+          "uid":"rfgadvlkjhrbnaedlkvherafg",
           "price":48.0,
           "stars":4,
           "category":5,
@@ -70,6 +76,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Coming Woman",
+          "uid":"eafvarsdkjggvnreg",
           "price":18.0,
           "stars":3,
           "category":6,
@@ -81,6 +88,7 @@
        "model":"products.book",
        "fields":{
           "title":"Soumission",
+          "uid":"adrbntfgahjyrtsh",
           "price":50.0,
           "stars":1,
           "category":7,
@@ -92,6 +100,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Requiem Red",
+          "uid":"sftntaerhaeth",
           "price":23.0,
           "stars":1,
           "category":3,
@@ -103,6 +112,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Dirty Little Secrets of Getting Your Dream Job",
+          "uid":"reSAGDTAHBSDRAfgv",
           "price":33.0,
           "stars":4,
           "category":8,
@@ -114,6 +124,7 @@
        "model":"products.book",
        "fields":{
           "title":"Tipping the Velvet",
+          "uid":"SAFGHATREHSDGfdshstd",
           "price":54.0,
           "stars":1,
           "category":9,
@@ -125,6 +136,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Black Maria",
+          "uid":"saifyugasekjhfgw",
           "price":52.0,
           "stars":1,
           "category":1,
@@ -136,6 +148,7 @@
        "model":"products.book",
        "fields":{
           "title":"Libertarianism for Beginners",
+          "uid":"EDSAfjklhklwesbv",
           "price":51.0,
           "stars":2,
           "category":10,
@@ -147,6 +160,7 @@
        "model":"products.book",
        "fields":{
           "title":"Starving Hearts",
+          "uid":"seajhkfvbslkjhvblksiHG",
           "price":14.0,
           "stars":2,
           "category":6,
@@ -158,6 +172,7 @@
        "model":"products.book",
        "fields":{
           "title":"Mesaerion: The Best Science Fiction Stories",
+          "uid":"SAERGKHJGADRGVLKJHBFDASV",
           "price":38.0,
           "stars":1,
           "category":11,
@@ -169,6 +184,7 @@
        "model":"products.book",
        "fields":{
           "title":"It's Only The Himalayas",
+          "uid":"sraevhrasdlifgvh",
           "price":45.0,
           "stars":2,
           "category":12,
@@ -180,6 +196,7 @@
        "model":"products.book",
        "fields":{
           "title":"Olio",
+          "uid":"erfagvkjlrdahnvkjrahegv",
           "price":24.0,
           "stars":1,
           "category":1,
@@ -191,6 +208,7 @@
        "model":"products.book",
        "fields":{
           "title":"Our Band Could Be Your Life",
+          "uid":"resdagbraeherth",
           "price":57.0,
           "stars":3,
           "category":13,
@@ -202,6 +220,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Boys In The Boat",
+          "uid":"jhxgdfsvadfgaredhg",
           "price":23.0,
           "stars":4,
           "category":6,
@@ -213,6 +232,7 @@
        "model":"products.book",
        "fields":{
           "title":"Rip It Up and Start Again",
+          "uid":"redahdsfghbdafhgadfh",
           "price":35.0,
           "stars":5,
           "category":13,
@@ -224,6 +244,7 @@
        "model":"products.book",
        "fields":{
           "title":"Birdsong: A Story in Pictures",
+          "uid":"dskjchbklsdhjlkjhsdgf",
           "price":55.0,
           "stars":3,
           "category":14,
@@ -235,6 +256,7 @@
        "model":"products.book",
        "fields":{
           "title":"Black Dust",
+          "uid":"seghjfskajrhgfklseujghfd",
           "price":35.0,
           "stars":5,
           "category":9,
@@ -246,6 +268,7 @@
        "model":"products.book",
        "fields":{
           "title":"Chase Me",
+          "uid":"bsekjchghselkrghasilreghf",
           "price":25.0,
           "stars":5,
           "category":9,
@@ -257,6 +280,7 @@
        "model":"products.book",
        "fields":{
           "title":"Worlds Elsewhere: Journeys Around Shakespeare’s Globe",
+          "uid":"descvhlkrdghbalkjhfgrg",
           "price":40.0,
           "stars":5,
           "category":15,
@@ -268,6 +292,7 @@
        "model":"products.book",
        "fields":{
           "title":"Foolproof Preserving",
+          "uid":"fesHLFKJGHSejf",
           "price":31.0,
           "stars":3,
           "category":16,
@@ -279,6 +304,7 @@
        "model":"products.book",
        "fields":{
           "title":"Wall and Piece",
+          "uid":"frsaedhgilksradg",
           "price":44.0,
           "stars":4,
           "category":17,
@@ -290,6 +316,7 @@
        "model":"products.book",
        "fields":{
           "title":"Aladdin and His Wonderful Lamp",
+          "uid":"eskJGHBKLRASHGRFLDGADF",
           "price":53.0,
           "stars":3,
           "category":6,
@@ -301,6 +328,7 @@
        "model":"products.book",
        "fields":{
           "title":"America's Cradle of Quarterbacks",
+          "uid":"fhgkdsakjhfgsejkhgf",
           "price":23.0,
           "stars":3,
           "category":6,
@@ -312,6 +340,7 @@
        "model":"products.book",
        "fields":{
           "title":"How Music Works",
+          "uid":"lskjrhafgvklarjsdhglkjarhdsfg",
           "price":37.0,
           "stars":2,
           "category":13,
@@ -323,6 +352,7 @@
        "model":"products.book",
        "fields":{
           "title":"Behind Closed Doors",
+          "uid":"ldshjkagfhsklajrdghv",
           "price":52.0,
           "stars":4,
           "category":18,
@@ -334,6 +364,7 @@
        "model":"products.book",
        "fields":{
           "title":"In A Dark Dark Wood",
+          "uid":"radskghjadflkghjdfag",
           "price":20.0,
           "stars":1,
           "category":5,
@@ -345,6 +376,7 @@
        "model":"products.book",
        "fields":{
           "title":"In Her Wake",
+          "uid":"jkhldasfglkjasdgkjlhdsg",
           "price":13.0,
           "stars":1,
           "category":18,
@@ -356,6 +388,7 @@
        "model":"products.book",
        "fields":{
           "title":"You Can't Bury Them All",
+          "uid":"easfbnkjhrdsgalkasrhdg",
           "price":34.0,
           "stars":2,
           "category":1,
@@ -367,6 +400,7 @@
        "model":"products.book",
        "fields":{
           "title":"Maude",
+          "uid":"easfhkgujsahdgfvjlsdb",
           "price":18.0,
           "stars":2,
           "category":6,
@@ -378,6 +412,7 @@
        "model":"products.book",
        "fields":{
           "title":"Penny Maybe",
+          "uid":"sekfjhgsdkljvhbsdJLHFV",
           "price":33.0,
           "stars":3,
           "category":6,
@@ -389,6 +424,7 @@
        "model":"products.book",
        "fields":{
           "title":"Sophie's World",
+          "uid":"sdfyagdafjkhgvkljasdgh",
           "price":16.0,
           "stars":5,
           "category":15,
@@ -400,6 +436,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Five Love Languages",
+          "uid":"edsfhljkhgasergkvljbsv",
           "price":31.0,
           "stars":3,
           "category":15,
@@ -411,6 +448,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Bear and the Piano",
+          "uid":"fsejlhgfiusHRGLKHBJsg",
           "price":37.0,
           "stars":1,
           "category":14,
@@ -422,6 +460,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Elephant Tree",
+          "uid":"fdshligfsrDLGKJHsg",
           "price":24.0,
           "stars":5,
           "category":18,
@@ -433,6 +472,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Four Agreements",
+          "uid":"seRFGHLISDhgjvlkjshdG",
           "price":18.0,
           "stars":5,
           "category":1,
@@ -444,6 +484,7 @@
        "model":"products.book",
        "fields":{
           "title":"Private Paris",
+          "uid":"FGSRADHKGJHSgehbkjhadsfg",
           "price":48.0,
           "stars":5,
           "category":18,
@@ -455,6 +496,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Secret of Dreadwillow Carse",
+          "uid":"SEDHGKFJHSDAFGHJ",
           "price":56.0,
           "stars":1,
           "category":14,
@@ -466,6 +508,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Past Never Ends",
+          "uid":"fdhsalighsdakljgh",
           "price":57.0,
           "stars":4,
           "category":5,
@@ -477,6 +520,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Torch is Passed",
+          "uid":"gfdsaljhkghsdklfjgjh",
           "price":19.0,
           "stars":1,
           "category":5,
@@ -488,6 +532,7 @@
        "model":"products.book",
        "fields":{
           "title":"Without Borders",
+          "uid":"fdsELIKFHSDLkjgfh",
           "price":45.0,
           "stars":2,
           "category":3,
@@ -499,6 +544,7 @@
        "model":"products.book",
        "fields":{
           "title":"#Higherselfie",
+          "uid":"sdfhliusdahgkljhasdg",
           "price":23.0,
           "stars":5,
           "category":15,
@@ -510,6 +556,7 @@
        "model":"products.book",
        "fields":{
           "title":"Thirst",
+          "uid":"fgdalhgifdajhgkjdsfhg",
           "price":17.0,
           "stars":5,
           "category":5,
@@ -521,6 +568,7 @@
        "model":"products.book",
        "fields":{
           "title":"Slow States of Collapse",
+          "uid":"fdseLHGISDUHGLKSjdhg",
           "price":57.0,
           "stars":3,
           "category":1,
@@ -532,6 +580,7 @@
        "model":"products.book",
        "fields":{
           "title":"The Pioneer Woman Cooks",
+          "uid":"fdsliguhsdakljghSLDKJGH",
           "price":56.0,
           "stars":1,
           "category":16,
@@ -543,6 +592,7 @@
        "model":"products.book",
        "fields":{
           "title":"Reasons to Stay Alive",
+          "uid":"SDHGILASDFGHBKJNSDGdsfkljghadfsg",
           "price":26.0,
           "stars":2,
           "category":15,

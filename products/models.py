@@ -15,8 +15,7 @@ class Category(models.Model):
 
 class Book(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    slug_format = string.ascii_lowercase + string.digits + '-_'
-    slug = ''.join(random.choices(slug_format, k=15))
+    uid = models.SlugField(max_length=200, default=None, null=True)
     title = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)

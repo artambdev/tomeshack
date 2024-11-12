@@ -10,7 +10,7 @@
             {% for book in books %}
             <div class="col-sm-6 col-md-5 card">
                 <div class="card-body">
-                    <a href="{% url 'view_book' book.title %}">
+                    <a href="{% url 'view_book' book.uid %}">
                         <h2 class="card-title">{{ book.title }}</h2>
                         <p class="card-text">{{ book.get_description }}</p>
                         <p class="card-text">Price: €{{ book.price }}</p>

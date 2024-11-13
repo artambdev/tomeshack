@@ -34,5 +34,19 @@
         </div>
     </div>
     {% endif %}
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mb-4 mt-3">
+            {% for review in reviews %}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">{{ review.author }}:</h3>
+                    <p class="card-text">Rating: {{ review.stars }}/5</p>
+                    <p class="card-text">{{ review.content }}</p>
+                    <p class="card-text">Written on {{ review.created_on }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock content %}

@@ -17,13 +17,22 @@
     </div>
 </div>
 
-<!-- Replies section -->
+<!-- Reviews section -->
 <div class="container">
+    {% if reviews_count >= 1 %}
     <div class="row">
         <div class="col-12 col-md-8 card justify-content-center">
-            <h1>Reviews: ({{ replies_count }})</h1>
+            <h1>Reviews: ({{ reviews_count }})</h1>
             <h2>See what other readers have to say!</h2>
         </div>
     </div>
+    {% else %}
+    <div class="row">
+        <div class="col-12 col-md-8 card justify-content-center">
+            <h1>No reviews yet...</h1>
+            <h2>This one's hot! Be the first to read and review.</h2>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}

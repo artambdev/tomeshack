@@ -40,11 +40,13 @@ def view_book(request, uid):
     View function to render book's info page
     """
     book = get_object_or_404(Book.objects.all(), uid=uid)
+    num_reviews = book.reviews.filter(hidden=False).count()
 
     return render(
         request,
         "view_book.html",
         {
             "book": book,
+            "num_reviews": num_reviews,
         },
     )

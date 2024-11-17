@@ -30,7 +30,7 @@ class Book(models.Model):
         return f'"{self.description[:40]}..."'
 
 
-class Post(models.Model):
+class Review(models.Model):
     """
     Class to define the review model
     """
@@ -41,7 +41,8 @@ class Post(models.Model):
     review_of = models.ForeignKey(
         Book,
         on_delete=models.SET_NULL,
-        related_name="reviews"
+        related_name="reviews",
+        null = True
     )
     content = models.TextField(max_length=200)
     stars = models.IntegerField(null=True, blank=True)

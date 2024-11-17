@@ -40,7 +40,7 @@ def view_book(request, uid):
     View function to render book's info page
     """
     book = get_object_or_404(Book.objects.all(), uid=uid)
-    reviews = book.replies.all().order_by("created_on")
+    reviews = book.reviews.all().order_by("created_on")
     num_reviews = book.reviews.filter(hidden=False).count()
 
     return render(

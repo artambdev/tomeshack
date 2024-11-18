@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+    // Appropriately disable or enable inputs depending on if at minimum or maximum
+    function enableOrDisableInputs(itemId) {
+        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        var atMinimum = currentValue < 2;
+        var atMaximum = currentValue > 2;
+        $(`#decrement_${itemId}`).prop('disabled', atMinimum);
+        $(`#increment_${itemId}`).prop('disabled', atMaximum);
+    }
+
+    // Make sure + and - are properly enabled/disabled on page load
+    var qtyInputs = $('.qty_input');
+    for(var i = 0; i < qtyInputs.length; i++){
+        var itemId = $(qtyInputs[i]).data('item_id');
+        enableOrDisableInputs(itemId);
+    }
+
+    // If an input element changes, ensure the + and - buttons are rechecked
+    $('.qty_input').change(function() {
+        var itemId = $(this).data('item_id');
+        enableOrDisableInputs(itemId);
+    });
+
+    // On clicking +, increment quantity
+    $('.increment').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('item_id');
+       enableOrDisableInputs(itemId);
+    });
+
+    // On clicking -, decrement quantity
+    $('.decrement').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('item_id');
+       enableOrDisableInputs(itemId);
+    });
+</script>

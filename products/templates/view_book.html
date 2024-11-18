@@ -20,7 +20,21 @@
                             <p class="mt-3"><strong>Copies:</strong></p>
                             <div class="form-group w-50">
                                 <div class="input-group">
+                                    <button class="decrement btn" 
+                                                data-item_id="{{ book.uid }}" id="decrement_{{ book.uid }}">
+                                        <span class="icon">
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
                                     <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="4" data-item_id="{{ book.uid }}" id="id_qty_{{ book.uid }}">
+                                    <div class="input-group-append">
+                                        <button class="increment btn"
+                                            data-item_id="{{ book.uid }}" id="increment_{{ book.uid }}">
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -76,3 +90,8 @@
     
 </div>
 {% endblock content %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_buttons_script.html' %}
+{% endblock %}

@@ -32,7 +32,7 @@ def book_list(request):
         'search_term': query,
     }
 
-    return render(request, 'books.html', context)
+    return render(request, 'products/books.html', context)
 
 
 def view_book(request, uid):
@@ -45,7 +45,7 @@ def view_book(request, uid):
 
     return render(
         request,
-        "view_book.html",
+        "products/view_book.html",
         {
             "book": book,
             "reviews": reviews,

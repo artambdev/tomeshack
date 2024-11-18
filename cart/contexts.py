@@ -1,15 +1,15 @@
 from django.shortcuts import get_object_or_404
 from products.models import Book
 
-def cart_contents(requests):
 
+def cart_contents(request):
     cart_items = []
     total = 0
     num_items = 0
     cart = request.session.get('cart', {})
 
-    for item, quantity in cart.items():
-        book = get_object_or_404(Book, pk=item_id)
+    for item_id, quantity in cart.items():
+        book = get_object_or_404(Book, uid=item_id)
         total += book.price * quantity
         num_items += quantity
         cart_items.append({

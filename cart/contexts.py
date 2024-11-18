@@ -15,11 +15,12 @@ def cart_contents(requests):
         cart_items.append({
             'item_id': item_id,
             'quantity': quantity,
+            'subtotal': book.price * quantity,
             'book': book,
         })
 
     context = {
-        'num_items': num_items,
+        'cart_items': cart_items,
         'total': total,
         'num_items': num_items,
     }

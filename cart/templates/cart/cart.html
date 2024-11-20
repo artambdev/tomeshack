@@ -60,6 +60,7 @@
                                                 </div>
                                             </div>
                                         </form>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.subtotal }}</p>
@@ -106,5 +107,20 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_buttons_script.html' %}
+
+<script type="text/javascript">
+    // Remove an item from the cart and reload the page
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 
 {% endblock %}

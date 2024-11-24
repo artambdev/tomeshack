@@ -1,0 +1,1 @@
+web: gunicorn tomeshack.wsgi:application

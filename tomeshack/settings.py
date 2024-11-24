@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r-5$ju%@wid&lx0x$%t*#x%1#gr@+w(1&ewxk2twjb%=1jzo8$'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-artambdev-tomeshack-escgy0rfusm.ws-eu116.gitpod.io']
+ALLOWED_HOSTS = ['8000-artambdev-tomeshack-escgy0rfusm.ws-eu116.gitpod.io', '.herokuapp.com']
 
 
 # Application definition
@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -106,16 +108,17 @@ WSGI_APPLICATION = 'tomeshack.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
-DATABASES = {
-    'default': dj_database_url.parse('postgresql://neondb_owner:FaVfWT8UId9n@ep-holy-grass-a2tl1ccg.eu-central-1.aws.neon.tech/faced_bash_taps_515224')
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

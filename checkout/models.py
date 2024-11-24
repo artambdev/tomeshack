@@ -19,6 +19,22 @@ class Order(models.Model):
 
     order_total = models.DecimalField(max_digits=9, decimal_places=2, null=False, default=0)
 
+    def _generate_order_number(self):
+        """
+        Randomly generates a unique order number for the order
+        """
+        return uuid.uuid4().hex.upper()
+
+    def save(self, *args, **kwargs):
+        """
+        Set a new order number if there isn't one already
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.order_number
 
 
 class OrderLineItem(models.Model):

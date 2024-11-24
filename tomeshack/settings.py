@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import os
+import dj_database_url
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -110,6 +113,9 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    'default': dj_database_url.parse('postgresql://neondb_owner:FaVfWT8UId9n@ep-holy-grass-a2tl1ccg.eu-central-1.aws.neon.tech/faced_bash_taps_515224')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

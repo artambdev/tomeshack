@@ -1,4 +1,5 @@
 from django.db import models
+from products.models import Book
 
 
 class Order(models.Model):
@@ -16,4 +17,12 @@ class Order(models.Model):
 
     date = models.DateTimeField(auto_now_add=True)
 
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=9, decimal_places=2, null=False, default=0)
+
+
+
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
+    book = models.ForeignKey(Book, null=False, blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+    lineitem_total = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, editable=False)

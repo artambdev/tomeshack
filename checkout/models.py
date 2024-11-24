@@ -49,3 +49,10 @@ class OrderLineItem(models.Model):
     book = models.ForeignKey(Book, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, editable=False)
+
+    def save(self, *args, **kwargs):
+        """
+        Set lineitem total to price * quantity on save
+        """
+        self.lineitem_total = self.book.price * self.quantity
+        super().save(*args, **kwargs)

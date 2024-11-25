@@ -51,9 +51,9 @@ def checkout(request):
 
         if order_form.is_valid():
             order = order_form.save()
-            for item_id, item_data in bag.items():
+            for item_id, item_data in cart.items():
                 try:
-                    book = Book.objects.get(id=item_id)
+                    book = Book.objects.get(uid=item_id)
                     order_line_item = OrderLineItem(
                         order=order,
                         book=book,

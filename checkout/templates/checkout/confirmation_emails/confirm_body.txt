@@ -1,0 +1,14 @@
+Hello, {{ order.full_name }}
+
+You have placed an order with us at Tomeshack on {{ order.date }}.
+
+Order Number: {{ order.order_number }}
+Order Total: ${{ order.order_total }}
+
+Your books will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+Contact us at {{ contact_email }} if you have any questions or queries.
+
+With thanks,
+
+The Tomeshack Team

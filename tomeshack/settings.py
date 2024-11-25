@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-artambdev-tomeshack-escgy0rfusm.ws-eu116.gitpod.io', '.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-artambdev-tomeshack-escgy0rfusm.ws-eu116.gitpod.io']
 
 # Application definition
 

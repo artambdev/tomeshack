@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'checkout',
 
     'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tomeshack.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {

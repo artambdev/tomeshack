@@ -32,14 +32,14 @@
     {% endblock %}
 
     <title>Tomeshack {% block extratitle %}{% endblock %}</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
   </head>
   <body>
-    <nav class="navbar navbar-light navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
             <!-- Logo -->
         <a href="/" class="navbar-brand">
@@ -68,12 +68,12 @@
         <!-- List of options, in dropdown on small screens, on navbar on larger ones -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-                <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
-                <li class="active nav-item mr-2"><a class="nav-link" href="{% url 'products' %}">Products</a></li>
-                {% if user.is_authenticated %}
+                <li class="nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item mr-2"><a class="nav-link" href="{% url 'products' %}">Products</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'view_cart' %}">View Cart</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Sign Out</a>
                 </li>

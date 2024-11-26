@@ -31,15 +31,27 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #00a7d8;
 }
 
+/* White large logo text */
+.navbar-brand {
+    font-family:"Oswald", sans-serif;
+    font-size: xx-large;
+    color: #eafdff;
+}
+
+/* White navbar links */
+.nav-link {
+    color: #eafdff;
+}
+
 /* Footer styling */
 
-/* Brown background on footer */
-.darkened-bg {
+/* Dark grey background on footer */
+footer {
     background-color: #324a51;
 }
 
 /* White footer text for contrast with brown */
-.darkened-bg p {
+footer p {
     color: #eafdff;
 }
 

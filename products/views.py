@@ -50,7 +50,7 @@ def view_book(request, uid):
         review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
             new_review = review_form.save(commit=False)
-            new_review.slug = uuid.uuid4().hex.upper()
+            new_review.uid = uuid.uuid4().hex.upper()
             new_review.review_of = book
             new_review.author = request.user
             new_review.hidden = False
@@ -81,3 +81,27 @@ def view_book(request, uid):
             "review_form": review_form,
         },
     )
+
+
+def delete_review(request, uid):
+    """
+    View function to handle requests to delete reviews
+    """
+    queryset = Review.objects.all()
+    review = get_object_or_404(queryset, uid=uid)
+    book = review.review_of
+
+    if review.author == request.user or request.user.is_superuser:
+        review.delete()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Review successfully deleted'
+        )
+    else:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'There was an error deleting this review'
+        )
+
+    return HttpResponseRedirect(reverse('view_book', args=[book.uid]))

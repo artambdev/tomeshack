@@ -16,7 +16,7 @@
         </div>
         <div class="row post-section justify-content-center">
             {% for book in books %}
-            <div class="col-sm-6 col-md-5 card">
+            <div class="col-md-9 card">
                 <div class="card-body">
                     <a href="{% url 'view_book' book.uid %}">
                         <h2 class="card-title">{{ book.title }}</h2>

@@ -1,5 +1,6 @@
 import random
 import string
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -45,7 +46,6 @@ class Review(models.Model):
         null = True
     )
     content = models.TextField(max_length=200)
-    stars = models.IntegerField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     hidden = models.BooleanField()
 

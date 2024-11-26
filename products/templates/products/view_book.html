@@ -63,7 +63,7 @@
     {% if reviews_count >= 1 %}
     <div class="row">
         <div class="col-12 col-md-8 card justify-content-center">
-            <h1>Reviews: ({{ reviews_count }})</h1>
+            <h1><i class="fa-regular fa-star"></i> ({{ reviews_count }})</h1>
             <h2>See what other readers have to say!</h2>
         </div>
     </div>
@@ -75,13 +75,29 @@
         </div>
     </div>
     {% endif %}
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mb-4 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title"><i class="fa-regular fa-star"></i> Leave a Review</h2>
+                    <form id="post-form" method="post">
+                    {{ review_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit"
+                        class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <div class="row">
         <div class="col-md-8 col-lg-6 mb-4 mt-3">
             {% for review in reviews %}
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">{{ review.author }}:</h3>
-                    <p class="card-text">Rating: {{ review.stars }}/5</p>
                     <p class="card-text">{{ review.content }}</p>
                     <p class="card-text">Written on {{ review.created_on }}</p>
                 </div>

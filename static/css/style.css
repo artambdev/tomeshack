@@ -24,6 +24,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #00a7d8;
 }
 
+/* Footer styling */
+
+/* Brown background on footer */
+.darkened-bg {
+    background-color: #324a51;
+}
+
+/* White footer text for contrast with brown */
+.darkened-bg p {
+    color: #eafdff;
+}
+
+/* Mailchimp signup form */
 #mc_embed_signup{
     background:#ffff false;
     clear:left;

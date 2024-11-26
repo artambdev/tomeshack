@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 
 def view_cart(request):
@@ -13,12 +13,6 @@ def modify_cart(request, item_id):
         cart[item_id] = quantity
     else:
         cart.pop(item_id)
-
-
-    if item_id in list(cart.keys()):
-        cart[item_id] += quantity
-    else:
-        cart[item_id] = quantity
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -39,11 +33,10 @@ def add_to_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-
     try:
         cart = request.session.get('cart', {})
         cart.pop(item_id)
+        request.session['cart'] = cart
         return HttpResponse(status=200)
-
     except Exception as e:
         return HttpResponse(status=500)

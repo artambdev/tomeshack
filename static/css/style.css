@@ -62,3 +62,8 @@ footer p {
     font:14px Helvetica,Arial,sans-serif;
     width: 600px;
 }
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}

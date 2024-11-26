@@ -10,16 +10,16 @@ class TestReviewForm(TestCase):
         review_form = ReviewForm({
             'content': 'This is an awesome book!'
         })
-        self.assertTrue(post_form.is_valid(), msg='Post form is not valid but should be')
+        self.assertTrue(review_form.is_valid(), msg='Post form is not valid but should be')
 
     def test_form_no_content_is_invalid(self):
         """
         Test that form is invalid if has no content
         """
-        post_form = ReviewForm({
+        review_form = ReviewForm({
             'content': '',
         })
         self.assertFalse(
-            post_form.is_valid(),
+            review_form.is_valid(),
             msg='Post form valid despite empty content'
         )

@@ -43,8 +43,13 @@ def view_book(request, uid):
     View function to render book's info page
     """
     book = get_object_or_404(Book.objects.all(), uid=uid)
-    reviews = book.reviews.all().order_by("created_on")
-    num_reviews = book.reviews.filter(hidden=False).count()
+
+    if request.user.is_authenticated and request.user.is_superuser:
+        queryset = book.reviews.all()
+    else:
+        queryset = book.reviews.filter(hidden=False)
+    reviews = queryset.order_by("created_on")
+    num_reviews = queryset.count()
 
     if request.method == "POST":
         review_form = ReviewForm(data=request.POST)

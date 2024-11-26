@@ -1,3 +1,14 @@
+/* General styling */
+/* Set site background color */
+body {
+    background-color: #eafdff;
+}
+
+/* Remove text decoration on links */
+a {
+    text-decoration: none;
+}
+
 #mc_embed_signup{
     background:#ffff false;
     clear:left;

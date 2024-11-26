@@ -1,3 +1,6 @@
+/* Import Google Fonts Open Sans and Oswald */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+
 /* General styling */
 /* Set site background color */
 body {
@@ -7,6 +10,18 @@ body {
 /* Remove text decoration on links */
 a {
     text-decoration: none;
+}
+
+/* Dark grey text for paragraphs */
+p {
+    font-family:"Open Sans", sans-serif;
+    color: #324a51;
+}
+
+/* Blue text for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family:"Oswald", sans-serif;
+    color: #00a7d8;
 }
 
 #mc_embed_signup{

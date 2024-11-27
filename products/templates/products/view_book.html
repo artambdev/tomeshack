@@ -105,6 +105,9 @@
                     <a href="{% url 'delete_review' review.uid %}">
                         <button class="btn delete-button">Delete</button>
                     </a>
+                    <a href="{% url 'hide_review' review.uid %}">
+                        <button class="btn">Hide</button>
+                    </a>
                     {% endif %}
                 </div>
             </div>

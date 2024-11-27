@@ -110,3 +110,31 @@ def delete_review(request, uid):
         )
 
     return HttpResponseRedirect(reverse('view_book', args=[book.uid]))
+
+
+def hide_review(request, ui):
+    """
+    View function to handle hide review requests
+    """
+    queryset = Review.objects.all()
+    review = get_object_or_404(queryset, uid=uid)
+    book = review.review_of
+
+    if request.user.is_superuser:
+        review.hidden = not review.hidden
+        review.save()
+        message_string = "Review successfully hidden"
+        if not post.hidden:
+            message_string = "Review successfully unhidden"
+        messages.add_message(
+            request, messages.SUCCESS,
+            message_string
+        )
+    else:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'There was an error in hiding or unhiding this review'
+        )
+
+    return HttpResponseRedirect(reverse('view_book', args=[book.uid]))

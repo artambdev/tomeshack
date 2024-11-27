@@ -50,7 +50,7 @@ A few wireframes were made in advance of starting development to plan out the mo
 The wireframes are presented below:
 
 ### Colour
-Using <a href="https://mycolor.space">ColorSpace</a> a colour scheme ranging from off-white to peach to brown was used to give the website a friendly and cozy scheme suitable for a social site.
+Using <a href="https://mycolor.space">ColorSpace</a> a colour scheme was picked using blue shades to give the site a nice relaxing feeling appropriate for a place about stories and reading.
 
 ### Font
 Open Sans was used as an easy and readable font to use throughout the site for most text. Oswald is used as an alternative to help make headings stand out.

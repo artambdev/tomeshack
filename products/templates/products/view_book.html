@@ -8,11 +8,13 @@
     <div class="row justify-content-center">
         <div class="col-11 col-md-9 col-lg-8 card">
             <div class="card-body">
+                <!-- Information about the book -->
                 <h2 class="card-title">{{ book.title }}</h2>
                 <p class="card-text">{{ book.description }}</p>
                 <p class="card-text">Price: €{{ book.price }}</p>
-                <p class="card-text">Rating: {{ book.stars }}/5</p>
+                <p class="card-text">Our Rating: {{ book.stars }}/5</p>
 
+                <!-- Form to add books to the cart -->
                 <form class="form" action="{% url 'add_to_cart' book.uid %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -42,8 +44,9 @@
                             </div>
                         </div>
 
+                        <!-- Keep shopping/add to cart buttons -->
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black mt-5">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
@@ -63,6 +66,7 @@
 <!-- Reviews section -->
 <div class="container">
     {% if reviews_count >= 1 %}
+    <!-- Header if there are reviews -->
     <div class="row">
         <div class="col-12 col-md-8 card justify-content-center">
             <h1><i class="fa-regular fa-star"></i> ({{ reviews_count }})</h1>
@@ -70,6 +74,7 @@
         </div>
     </div>
     {% else %}
+    <!-- Reviews heading if no reviews available -->
     <div class="row">
         <div class="col-12 col-md-8 card justify-content-center">
             <h1>No reviews yet...</h1>
@@ -78,6 +83,7 @@
     </div>
     {% endif %}
     {% if user.is_authenticated %}
+    <!-- Form to write and submit reviews -->
     <div class="row">
         <div class="col-md-8 col-lg-6 mb-4 mt-3">
             <div class="card">
@@ -93,6 +99,7 @@
         </div>
     </div>
     {% endif %}
+    <!-- Show a list of the reviews posted -->
     <div class="row">
         <div class="col-md-8 col-lg-6 mb-4 mt-3">
             {% for review in reviews %}
@@ -103,10 +110,10 @@
                     <p class="card-text">Written on {{ review.created_on }}</p>
                     {% if user.is_authenticated and user.is_superuser %}
                     <a href="{% url 'delete_review' review.uid %}">
-                        <button class="btn delete-button">Delete</button>
+                        <button class="btn delete-button"><i class="fa-solid fa-trash"></i> Delete</button>
                     </a>
                     <a href="{% url 'hide_review' review.uid %}">
-                        <button class="btn">Hide</button>
+                        <button class="btn"><i class="fa-solid fa-eye-slash"></i> Hide</button>
                     </a>
                     {% endif %}
                 </div>

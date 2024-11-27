@@ -45,9 +45,10 @@
 
         <!-- On small screens, a button to toggle nav dropdown -->
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
         </button>
 
+        <!-- Search bar for books -->
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <form method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
@@ -66,22 +67,22 @@
         <!-- List of options, in dropdown on small screens, on navbar on larger ones -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item mr-2"><a class="nav-link" href="{% url 'products' %}">Products</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'view_cart' %}">View Cart</a>
+                <li class="nav-item mr-2"><a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li class="nav-item mr-2"><a class="nav-link" href="{% url 'products' %}"><i class="fa-solid fa-book"></i>Products</a></li>
+                <li class="nav-item mr-2">
+                    <a class="nav-link" href="{% url 'view_cart' %}"><i class="fa-solid fa-cart-shopping"></i>View Cart</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Sign Out</a>
+                <li class="nav-item mr-2">
+                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
+                <li class="nav-item mr-2">
                     <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'account_signup' %}">Sign Up</a>
+                        href="{% url 'account_signup' %}"><i class="fa-solid fa-user-plus"></i>Sign Up</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Sign In</a>
+                <li class="nav-item mr-2">
+                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}"><i class="fa-solid fa-right-to-bracket"></i>Sign In</a>
                 </li>
                 {% endif %}
             </ul>
@@ -110,6 +111,7 @@
     {% block postloadjs %}
     {% endblock %}
 
+    <!-- Footer -->
     <footer class="footer fixed-bottom py-1">
         <div class="container">
             <p class="text-center">Created by Arthur Ambalov</p>

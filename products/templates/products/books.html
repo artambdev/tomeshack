@@ -6,23 +6,37 @@
 <!-- Main page content begins here -->
 <div>
     <div class="container">
+        <!-- Section containing sort buttons -->
         <div class="row justify-content-center">
-            <div class="col-sm-9 col-md-auto card">
-                <a href="{% url 'products' %}?category=deals">Best Deals</a>
-                <a href="{% url 'products' %}?category=poetry,music">Poetry &amp; Music</a>
-                <a href="{% url 'products' %}?category=fantasy,thriller,science_fiction">Fantasy, Thriller &amp; Science Fiction</a>
-                <a href="{% url 'products' %}">All Books</a>
+            <div class="col-11 card d-flex justify-content-around">
+                <p class="text-center pt-2">Sort books by:</p>
+                <div class="card-body d-flex justify-content-around">
+                    <p class="px-2">
+                        <a href="{% url 'products' %}?category=deals">Best Deals</a>
+                    </p>
+                    <p class="px-2">
+                        <a href="{% url 'products' %}?category=poetry,music">Poetry &amp; Music</a>
+                    </p>
+                    <p class="px-2">
+                        <a href="{% url 'products' %}?category=fantasy,thriller,science_fiction">Fantasy, Thriller &amp;
+                            Science Fiction</a>
+                    </p>
+                    <p class="px-2">
+                        <a href="{% url 'products' %}">All Books</a>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="row post-section justify-content-center">
+        <!-- Show a list of all books that fit current criteria -->
+        <div class="row book-list justify-content-center">
             {% for book in books %}
-            <div class="col-md-9 card">
+            <div class="col-md-11 card">
                 <div class="card-body">
                     <a href="{% url 'view_book' book.uid %}">
                         <h2 class="card-title">{{ book.title }}</h2>
                         <p class="card-text">{{ book.get_description }}</p>
                         <p class="card-text">Price: €{{ book.price }}</p>
-                        <p class="card-text">Rating: {{ book.stars }}/5</p>
+                        <p class="card-text">Our Rating: {{ book.stars }}/5</p>
                     </a>
                 </div>
             </div>

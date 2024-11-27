@@ -30,6 +30,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    If get, show the checkout page and order form
+    If post, post the order form and go to success page
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

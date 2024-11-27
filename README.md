@@ -149,7 +149,7 @@ Below is a list of user stories and the process by which they are fulfilled:
 
 
 ### Automated Testing
-Automated tests were created to test the forms and views of apps where relevant (there are no forms in the products app)
+Automated tests were created to test the forms and views of apps where relevant.
 
 #### Cart App ####
 
@@ -211,6 +211,7 @@ On this project's repository, at the upper-right-hand side, there is a "Code" bu
 
 ## Credits
 - Icons: <a href="https://fontawesome.com/icons">FontAwesome</a>
+- Original dataset: <a href="https://www.kaggle.com/datasets/bishop36/bookstore">bookstore by Bishop36 on Kaggle</a>, modified for usage in this project
 
 Technology used:
 - Languages: HTML 5, CSS, JavaScript, Python

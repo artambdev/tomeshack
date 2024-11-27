@@ -63,6 +63,14 @@ footer p {
     width: 600px;
 }
 
+/* Cards have a blue background, some space between each other */
+.card {
+    background-color: #acedff;
+    margin: 0.5rem;
+    min-height: 4rem;
+}
+
+/* Remove/update links on contact page have a pointer on hover */
 .update-link,
 .remove-item {
     cursor: pointer;

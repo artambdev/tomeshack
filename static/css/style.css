@@ -10,6 +10,7 @@ body {
 /* Remove text decoration on links */
 a {
     text-decoration: none;
+    color: #0051A8;
 }
 
 /* Dark grey text for paragraphs */

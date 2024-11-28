@@ -282,11 +282,19 @@ The JavaScript code used for Stripe payment processing was run through the JSHin
 </details>
 
 ### Accessibility
-All pages on the site are checked with the WAVE Website Accessibility Evaluation Tool, and none show any errors. See each page below:
-
-
-
-
+Pages on the site are checked with the WAVE Website Accessibility Evaluation Tool. One error on the main page is from MailChimp's signup form, which is intentionally present to avoid bot signups. Other pages have no errors. See each page below:
+<details><summary>Main Page</summary>
+<img src="docs/validation/wave/wave-main.png">
+</details>
+<details><summary>Products</summary>
+<img src="docs/validation/wave/wave-products.png">
+</details>
+<details><summary>Detailed View</summary>
+<img src="docs/validation/wave/wave-view.png">
+</details>
+<details><summary>Cart</summary>
+<img src="docs/validation/wave/wave-cart.png">
+</details>
 
 ### Browser Compatibility
 Each page has been tested to work on:

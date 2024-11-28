@@ -30,7 +30,8 @@ class TestListViews(TestCase):
         )
         self.book.save()
 
-        self.review = Review(review_of=self.book,
+        self.review = Review(
+            review_of=self.book,
             author=self.user,
             uid="review-uid",
             content="Review content",
@@ -38,7 +39,8 @@ class TestListViews(TestCase):
         )
         self.review.save()
 
-        self.hidden = Review(review_of=self.book,
+        self.hidden = Review(
+            review_of=self.book,
             author=self.user,
             uid="review-hidden-uid",
             content="Hidden content",

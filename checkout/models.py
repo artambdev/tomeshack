@@ -19,7 +19,12 @@ class Order(models.Model):
 
     date = models.DateTimeField(auto_now_add=True)
 
-    order_total = models.DecimalField(max_digits=9, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(
+        max_digits=9,
+        decimal_places=2,
+        null=False,
+        default=0
+    )
 
     def _generate_order_number(self):
         """
@@ -37,20 +42,38 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number
-    
+
     def update_total(self):
         """
         When a line is added, update the total
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum']
         self.save()
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    book = models.ForeignKey(Book, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='lineitems'
+    )
+    book = models.ForeignKey(
+        Book,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE
+    )
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        editable=False
+    )
 
     def save(self, *args, **kwargs):
         """

@@ -28,7 +28,6 @@ class TestListViews(TestCase):
             stars=5
         )
         self.book.save()
-    
 
     def test_add_to_cart(self):
         """

@@ -12,7 +12,6 @@ class TestListViews(TestCase):
             email="sample@email.com"
         )
 
-
     def test_render_index(self):
         """
         Test that the index works

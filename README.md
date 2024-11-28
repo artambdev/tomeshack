@@ -205,18 +205,81 @@ The JavaScript code used for Stripe payment processing was run through the JSHin
 
 
 ### Python
-
-#### Home App ####
 <a href="https://pep8ci.herokuapp.com/">PEP8 Python Linter</a> was used to validate python files.
 
+#### Home App ####
+<details><summary>urls.py</summary>
+<img src="docs/validation/python/home-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/python/home-views.png">
+</details>
+
 #### Cart App ####
+<details><summary>contexts.py</summary>
+<img src="docs/validation/python/cart-contexts.png">
+</details>
+<details><summary>test_views.py</summary>
+<img src="docs/validation/python/cart-test-views.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/python/cart-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/python/cart-views.png">
+</details>
 
 #### Checkout App ####
+<details><summary>admin.py</summary>
+<img src="docs/validation/python/checkout-admin.png">
+</details>
+<details><summary>apps.py</summary>
+<img src="docs/validation/python/checkout-apps.png">
+</details>
+<details><summary>forms.py</summary>
+<img src="docs/validation/python/checkout-forms.png">
+</details>
+<details><summary>models.py</summary>
+<img src="docs/validation/python/checkout-models.png">
+</details>
+<details><summary>signals.py</summary>
+<img src="docs/validation/python/checkout-signals.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/python/checkout-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/python/checkout-views.png">
+</details>
+<details><summary>webhook_handler.py</summary>
+<img src="docs/validation/python/checkout-webhook-handler.png">
+</details>
+<details><summary>webhooks.py</summary>
+<img src="docs/validation/python/checkout-webhooks.png">
+</details>
 
 #### Products App ####
-
-
-
+<details><summary>admin.py</summary>
+<img src="docs/validation/python/products-admin.png">
+</details>
+<details><summary>forms.py</summary>
+<img src="docs/validation/python/products-forms.png">
+</details>
+<details><summary>models.py</summary>
+<img src="docs/validation/python/products-models.png">
+</details>
+<details><summary>test_forms.py</summary>
+<img src="docs/validation/python/products-signals.png">
+</details>
+<details><summary>test_views.py</summary>
+<img src="docs/validation/python/products-signals.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/python/products-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/python/products-views.png">
+</details>
 
 ### Accessibility
 All pages on the site are checked with the WAVE Website Accessibility Evaluation Tool, and none show any errors. See each page below:

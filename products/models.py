@@ -23,7 +23,12 @@ class Book(models.Model):
     """
     Class to define the book model
     """
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
     uid = models.SlugField(max_length=200, default=None, null=True)
     title = models.CharField(max_length=254)
     description = models.TextField()
@@ -32,7 +37,7 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def get_description(self):
         return f'"{self.description[:40]}..."'
 
@@ -49,7 +54,7 @@ class Review(models.Model):
         Book,
         on_delete=models.SET_NULL,
         related_name="reviews",
-        null = True
+        null=True
     )
     content = models.TextField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)

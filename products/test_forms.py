@@ -10,7 +10,10 @@ class TestReviewForm(TestCase):
         review_form = ReviewForm({
             'content': 'This is an awesome book!'
         })
-        self.assertTrue(review_form.is_valid(), msg='Post form is not valid but should be')
+        self.assertTrue(
+            review_form.is_valid(),
+            msg='Post form is not valid but should be'
+        )
 
     def test_form_no_content_is_invalid(self):
         """

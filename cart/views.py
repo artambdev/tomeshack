@@ -31,14 +31,14 @@ def add_to_cart(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
-    new_quantity = cart[item_id] + quantity
-    if new_quantity > 4:
-        new_quantity = 4
 
     if item_id in list(cart.keys()):
         cart[item_id] += new_quantity
+        new_quantity = cart[item_id] + quantity
+        if new_quantity > 4:
+            new_quantity = 4
     else:
-        cart[item_id] = new_quantity
+        cart[item_id] = quantity
 
     request.session['cart'] = cart
     return redirect(redirect_url)

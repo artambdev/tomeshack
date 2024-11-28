@@ -24,17 +24,17 @@
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <button class="decrement btn" data-item_id="{{ book.uid }}"
-                                            id="decrement_{{ book.uid }}">
+                                            id="decrement_{{ book.uid }}" aria-label="Decrease quantity">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
                                             </span>
                                         </button>
                                     </div>
-                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                    <input class="form-control qty_input" type="number" name="quantity" aria-label="Input item quantity" value="1"
                                         min="1" max="4" data-item_id="{{ book.uid }}" id="id_qty_{{ book.uid }}">
                                     <div class="input-group-append">
                                         <button class="increment btn" data-item_id="{{ book.uid }}"
-                                            id="increment_{{ book.uid }}">
+                                            id="increment_{{ book.uid }}" aria-label="Increase quantity">
                                             <span class="icon">
                                                 <i class="fas fa-plus"></i>
                                             </span>

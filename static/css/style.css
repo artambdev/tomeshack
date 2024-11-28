@@ -21,7 +21,7 @@ p {
 /* Blue text for headings */
 h1, h2, h3, h4, h5, h6 {
     font-family:"Oswald", sans-serif;
-    color: #00a7d8;
+    color: #007194;
 }
 
 /* Navbar styling */
@@ -65,7 +65,7 @@ footer p {
 
 /* Cards have a blue background, some space between each other */
 .card {
-    background-color: #acedff;
+    background-color: #007194;
     margin: 0.5rem;
     min-height: 4rem;
 }

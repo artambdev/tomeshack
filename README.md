@@ -34,14 +34,60 @@ Tomeshack is an online bookshop where people can browse different categories of 
 ## User Stories
 The website is designed for 8 detailed user stories, which are detailed alongside their acceptance criteria:
 
+1. As a customer I can view a sortable list of books so that I can search for the kinds of book I am interested in.
+Acceptance criteria:
+- A products page displays a list of books
+- Books are shown with titles, ratings, prices and excerpts of descriptions
+- The list can be filtered by different categories
 
+2. As a customer I can view or leave reviews so that I can see what people think of the books and share my thoughts.
+Acceptance criteria:
+- On a book's individual page, a review section is added
+- Reviews appear in sequence for others to read
+- Logged-in users can write reviews for others
+
+3. As a customer I can view a detailed info page for a book so that I can read more on it.
+Acceptance criteria:
+- When a book's card is clicked in the main view, user is brought to its dedicated page
+- This page allows for a full reading of the book's description
+- The book's price and Tomeshack rating are shown
+
+4. As a site administrator I can hide or delete reviews so that I can moderate harmful or hostile content.
+Acceptance criteria:
+- As a superuser viewing a book's dedicated page, a hide and delete button appear on reviews
+- Hidden reviews are only visible to superusers
+- Deleted posts are removed from the database entirely
+
+5. As a customer I can add books I want to buy to my cart so that I can purchase them in a convenient manner.
+Acceptance criteria:
+- Viewing a book's dedicated page allows the user to add one or more copies to their cart
+- Copies have a maximum of 4 in the cart to avoid scalping
+- Cart items are saved to the session
+
+6. As a customer I can view and modify my cart so that I can make final adjustments before ordering.
+Acceptance criteria:
+- The cart can be viewed on its own dedicated page with all products visible
+- Product quantities can be modified directly from the cart page
+- Items can be removed from the cart from the page
+
+7. As a customer I can search the site for a book by title so that I can more easily find what I'm looking for.
+Acceptance criteria:
+- On the navbar, a search bar is visible
+- Keywords can be entered into the search bar
+- Searching shows only books with the keywords in their title or description
+
+8. As a customer I can sign up to a newsletter so that I can stay up to date on new book deals.
+Acceptance criteria:
+- On the main page, a signup form is available
+- Customers can subscribe to the newsletter
+- Subscribers receive information on new deals
 
 ### Tracking
 
 In accordance with agile principles, the user stories were tracked using GitHub's projects and issues features to create a kanban board. The project is set to visible, and a screenshot of it is shown below:
 
 <details><summary>Image</summary>
-
+<img src="docs/kanban.png">
 </details>
 
 ## Design
@@ -54,6 +100,9 @@ Using <a href="https://mycolor.space">ColorSpace</a> a colour scheme was picked 
 
 ### Font
 Open Sans was used as an easy and readable font to use throughout the site for most text. Oswald is used as an alternative to help make headings stand out.
+
+### Search Engine Optimisation
+Meta tags, a robots.txt file and a sitemap were all included in the project to optimise SEO quality.
 
 ### Database
 - The website's backend database is powered by the Django framework, with the PostgresSQL relational database system provided by Code Institute.
@@ -89,6 +138,29 @@ The review model is used for the reviews users can leave on books. It has the fo
 - The text content of the review (capped to 200 characters)
 - Whether a site administrator has hidden the review
 
+#### Orders
+
+The order model is used to track customer orders, with the following fields:
+- A randomly generated order number
+- The customer's full name
+- Their email
+- Their phone number
+- The country they live in
+- Their postcode (optional)
+- Their town or city
+- Their street address (in two lines)
+- Their county (optional)
+- The date and time the order was placed
+- The total value of the order
+
+#### Order Lines
+
+The individual lines of an order are stored as a model with the following fields:
+- The order the line is associated with (as Order model above)
+- The book being purchased (as Book model above)
+- The quantity of copies expressed as an integer
+- The automatically-calculated total value of the line
+
 ## Features
 The website has 5 main pages and X features across them.
 
@@ -99,19 +171,43 @@ The website has 5 main pages and X features across them.
 ### HTML
 All pages on the site are validated with the W3C's Markup Validation Service and show no errors or warnings. See each page below:
 
+<details><summary>Homepage</summary>
+<img src="docs/validation/html/html-main-page.png">
+</details>
+<details><summary>Products Page</summary>
+<img src="docs/validation/html/html-products.png">
+</details>
+<details><summary>Detailed View</summary>
+<img src="docs/validation/html/html-view.png">
+</details>
+<details><summary>Cart</summary>
+<img src="docs/validation/html/html-cart.png">
+</details>
+<details><summary>Checkout</summary>
+<img src="docs/validation/html/html-checkout.png">
+</details>
 
 ### CSS
 The CSS style used by the site was validated with the W3C's CSS Validation Service, and showed no errors. There is one warning for the external stylesheet of Google Fonts which cannot be checked. See below:
 
+<details><summary>Images</summary>
+<img src="docs/validation/css/css-no-errors.png">
+<img src="docs/validation/css/css-warning.png">
+</details>
 
 
 ### JavaScript
-The JavaScript code used for the post deletion modal was validated with the JSHint Code Quality Tool, showing no errors or warnings.
+The JavaScript code used for Stripe payment processing was run through the JSHint Javascript validator. There are no errors besides those caused by the unique tokens $ and Stripe tokens used by jQuery and Stripe libraries respectively.
 
+<details><summary>Image</summary>
+<img src="docs/validation/javascript.png">
+</details>
 
 
 ### Python
 
+#### Home App ####
+<a href="https://pep8ci.herokuapp.com/">PEP8 Python Linter</a> was used to validate python files.
 
 #### Cart App ####
 
@@ -125,11 +221,6 @@ The JavaScript code used for the post deletion modal was validated with the JSHi
 ### Accessibility
 All pages on the site are checked with the WAVE Website Accessibility Evaluation Tool, and none show any errors. See each page below:
 
-
-
-
-### Performance
-Google Chrome's Lighthouse feature was used to check every page for performance issues, and each returned a high score in all categories. See each page's result below:
 
 
 
@@ -152,9 +243,6 @@ Below is a list of user stories and the process by which they are fulfilled:
 Automated tests were created to test the forms and views of apps where relevant.
 
 #### Cart App ####
-
-
-#### Contact App ####
 
 
 #### Products App ####

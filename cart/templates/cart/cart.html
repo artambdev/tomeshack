@@ -110,7 +110,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_buttons_script.html' %}
 
-<script type="text/javascript">
+<script>
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();

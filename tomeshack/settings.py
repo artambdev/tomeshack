@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-artambdev-tomeshack-escgy0rfusm.ws-eu116.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['8000-artambdev-tomeshack-escgy0rfusm.ws-eu117.gitpod.io', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io",
@@ -116,21 +116,17 @@ WSGI_APPLICATION = 'tomeshack.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# if 'DATABASE_URL' in os.environ:
-#     DATABASES = {
-#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-
-DATABASES = {
-    'default': dj_database_url.parse('postgresql://neondb_owner:FaVfWT8UId9n@ep-holy-grass-a2tl1ccg.eu-central-1.aws.neon.tech/faced_bash_taps_515224')
-}
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

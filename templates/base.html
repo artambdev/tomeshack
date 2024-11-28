@@ -101,6 +101,14 @@
                 {% endif %}
             </ul>
         </div>
+
+        <!-- Display user login status -->
+        {% if user.is_authenticated %}
+        <p class="text-end m-3 .nav-link">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3 .nav-link">You are not logged in</p>
+        {% endif %}
+        </div>
     </nav>
 
     <!-- Django message popup -->

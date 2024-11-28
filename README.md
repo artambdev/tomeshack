@@ -1,6 +1,9 @@
 # Tomeshack
 - developed by Arthur Ambalov
 
+
+[Link to live webpage](https://artamb-tomeshack-b3b419a80e66.herokuapp.com/)
+
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -9,7 +12,8 @@
 3. [Design](#design)
     1. [Colour](#colour)
     2. [Font](#font)
-    3. [Database](#database)
+    3. [Search Engine Optimisation](#search-engine-optimisation)
+    4. [Database](#database)
 4. [Features](#features)
     1. [Pages](#pages)
 5. [Validation](#validation-and-testing)
@@ -18,11 +22,10 @@
     3. [Javascript](#javascript)
     4. [Python](#python)
     5. [Accessibility](#accessibility)
-    6. [Performance](#performance)
-    7. [Browser Compatibility](#browser-compatibility)
-    8. [Device Compatibility](#device-compatibility)
-    9. [User Stories](#user-stories)
-    10. [Automated Testing](#automated-testing)
+    6. [Browser Compatibility](#browser-compatibility)
+    7. [Device Compatibility](#device-compatibility)
+    8. [User Stories](#user-stories)
+    9. [Automated Testing](#automated-testing)
 6. [Bugs](#bugs)
 7. [Deployment](#deployment)
 8. [Credits](#credits)
@@ -93,7 +96,28 @@ In accordance with agile principles, the user stories were tracked using GitHub'
 ## Design
 A few wireframes were made in advance of starting development to plan out the most important features and the structure of code that would be required to accompany them.
 
+An additional wireframe was made as a mockup of a potential Facebook Business page for the site.
+
 The wireframes are presented below:
+
+<details><summary>Main</summary>
+<img src="docs/wireframes/wireframe-main.png">
+</details>
+<details><summary>Products</summary>
+<img src="docs/wireframes/wireframe-list.png">
+</details>
+<details><summary>Detailed View</summary>
+<img src="docs/wireframes/wireframe-view.png">
+</details>
+<details><summary>Cart</summary>
+<img src="docs/wireframes/wireframe-cart.png">
+</details>
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/wireframe-mobile.png">
+</details>
+<details><summary>Facebook</summary>
+<img src="docs/wireframes/wireframe-marketing.png">
+</details>
 
 ### Colour
 Using <a href="https://mycolor.space">ColorSpace</a> a colour scheme was picked using blue shades to give the site a nice relaxing feeling appropriate for a place about stories and reading.
@@ -387,7 +411,98 @@ Each page was tested on Mozilla Firefox and Google Chrome's developer tools for 
 ### User Stories
 Below is a list of user stories and the process by which they are fulfilled:
 
+1. As a customer I can view a sortable list of books so that I can search for the kinds of book I am interested in.
 
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navbar | Navigate to the product page via the navbar | Find a list of books | Works as expected |
+| Sort categories | Click on a category | Sort book list by that category | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-1a.png">
+<img src="docs/testing/story-1b.png">
+<img src="docs/testing/story-1c.png">
+</details>
+
+2. As a customer I can view or leave reviews so that I can see what people think of the books and share my thoughts.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Reviews section | Navigate to view of specific book, scroll down | Find reviews of that book | Works as expected |
+| Review form | Log in, go to review section, type review and hit submit | A review is left on the book | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-2a.png">
+<img src="docs/testing/story-2b.png">
+<img src="docs/testing/story-2c.png">
+</details>
+
+3. As a customer I can view a detailed info page for a book so that I can read more on it.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Book list | Navigate to products page, go to book list, click on desired book | Find a detailed description of the book | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-3a.png">
+<img src="docs/testing/story-3b.png">
+</details>
+
+4. As a site administrator I can hide or delete reviews so that I can moderate harmful or hostile content.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Hide button | As a super user, click "hide" on a review | The review is not visible to non-superusers | Works as expected |
+| Delete button | As a super user, click "delete" on a review | The review is removed for all users | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-4a.png">
+<img src="docs/testing/story-4b.png">
+</details>
+
+5. As a customer I can add books I want to buy to my cart so that I can purchase them in a convenient manner.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Quantity selectors | Use the input or buttons to select a quantity and hit submit | That number of copies is added to the cart | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-5a.png">
+<img src="docs/testing/story-5b.png">
+</details>
+
+6. As a customer I can view and modify my cart so that I can make final adjustments before ordering.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Cart view | Click on "my cart" in the navbar | Be brought to the cart view where buttons to adjust quantities are visible | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-6a.png">
+<img src="docs/testing/story-6b.png">
+</details>
+
+7. As a customer I can search the site for a book by title so that I can more easily find what I'm looking for.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Searchbar | Enter a phrase into the bar and hit submit | Be brought to the book list, sorted only by works with the keywords in their title or description | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-7a.png">
+<img src="docs/testing/story-7b.png">
+</details>
+
+8. As a customer I can sign up to a newsletter so that I can stay up to date on new book deals.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Newsletter | Go to homepage via the navbar, enter email into the newsletter form and submit | Be signed up to a newsletter | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-8a.png">
+<img src="docs/testing/story-8b.png">
+</details>
 
 ### Automated Testing
 Automated tests were created to test the forms and views of apps where relevant.
@@ -416,10 +531,10 @@ The project was deployed using the online platform Heroku. The following steps w
 
 3. Choose an app name and region to use, Europe in my case
 <details><summary>Image</summary>
-<img src="docs/heroku/heroku-newapp2.png">
+<img src="docs/heroku/heroku-startapp.png">
 </details>
 
-4. Navigate to the "Settings" tab of the new app and set the config vars: the postgres database URL and the secret key it uses:
+4. Navigate to the "Settings" tab of the new app and set the config vars: the database url, email to send confirmations from and its password, and the keys used for the database and for Stripe payments
 <details><summary>Image</summary>
 <img src="docs/heroku/heroku-configvars.png">
 </details>
@@ -454,6 +569,7 @@ Technology used:
 - Database management framework: Django
 - IDE: GitPod
 - Version control: GitHub
+- Payment processing: Stripe
 - Deployment: Heroku
 - Wireframing: Balsamiq
 - Validation: W3C HTML Validator, W3C CSS Validator, JSHints Code Quality Tool, WAVE Website Accessibility Evaluation Tool, PEP8, Google Chrome

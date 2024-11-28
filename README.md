@@ -164,7 +164,86 @@ The individual lines of an order are stored as a model with the following fields
 ## Features
 The website has 5 main pages and X features across them.
 
+### Pages
+The 5 pages are:
 
+- The homepage, which welcomes the customer, has a button to go to the products page and has a newsletter signup form.
+- The products page, where books are displayed and can be filtered using the categories at the top or via the searchbar
+- The book view page, where details of a book can be seen and reviews created or read
+- The cart page, where a user can see and modify their cart and proceed to checkout
+- The checkout page, where a user can enter their details to confirm their order
+
+### Navbar
+The navbar at the top of all pages has several buttons used to travel between the homepage, products page, cart and accounts pages.
+User stories fulfilled: 7
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-nav.png">
+</details>
+
+### Searchbar
+A searchbar can be used to find specific books or description keywords. Submitting a query sends a user to the products page with only books that have the entered query in their title or description.
+User stories fulfilled: 7
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-search.png">
+</details>
+
+### Newsletter
+A newsletter signup via Mailchimp is available on the front page to allow users to subscribe to emails containing new deals.
+User stories fulfilled: 8
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-newsletter.png">
+</details>
+
+### Sorting Categories
+Several sort options are available on the products page to sort the list via sets of genres.
+User stories fulfilled: 1
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-sort.png">
+</details>
+
+### Book List
+The books (sortable via the sorting categories or searchbar) are listed on the products page with a description excerpt, price and rating.
+User stories fulfilled: 1, 7
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-list.png">
+</details>
+
+### Detailed View
+Full descriptions of a book can be seen on their dedicated page.
+User stories fulfilled: 3
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-detail.png">
+</details>
+
+### Quantity Selectors
+These buttons on a book's detailed view can be used to select up to 4 total copies to be added to the cart.
+User stories fulfilled: 5
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-selectors.png">
+</details>
+
+### Reviews
+A reviews section under each book allows users to see reviews left by others or to leave their own if logged in.
+User stories fulfilled: 2, 4
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-reviews.png">
+</details>
+
+### Cart
+The cart page shows a list of all products in the cart, quantities and subtotals alongside a grand total, and quantities can be managed or products removed via this page.
+User stories fulfilled: 6
+
+<details><summary>Image</summary>
+<img src="docs/features/feature-cart.png">
+</details>
 
 ## Validation and Testing
 
@@ -313,11 +392,9 @@ Below is a list of user stories and the process by which they are fulfilled:
 ### Automated Testing
 Automated tests were created to test the forms and views of apps where relevant.
 
-#### Cart App ####
-
-
-#### Products App ####
-
+<details><summary>Image</summary>
+<img src="docs/validation/auto-test.png">
+</details>
 
 ## Bugs
 Notable bugs found during development:

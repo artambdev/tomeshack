@@ -10,7 +10,6 @@ var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
-console.log("one");
 var style = {
     base: {
         color: '#000',
@@ -45,8 +44,6 @@ card.addEventListener('change', function (event) {
     }
 });
 
-console.log("two");
-
 // Handle form submission
 var form = document.getElementById('payment-form');
 
@@ -67,6 +64,7 @@ form.addEventListener('submit', function(ev) {
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
+        console.log("yippee");
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
@@ -96,7 +94,10 @@ form.addEventListener('submit', function(ev) {
                 }
             },
         }).then(function(result) {
+            console.log(result)
+            console.log("yippee!!!");
             if (result.error) {
+                console.log("oh no");
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
                     <span class="icon" role="alert">
@@ -107,11 +108,9 @@ form.addEventListener('submit', function(ev) {
                 card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
             } else {
-                if (result.paymentIntent.status === 'succeeded') {
-                    console.log("done");
-
-                    form.submit();
-                }
+                //if (result.paymentIntent.status === 'succeeded') {
+                form.submit();
+                //}
             };
         });
     }).fail(function () {

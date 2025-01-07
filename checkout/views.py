@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -72,7 +72,8 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_cart'))
 
-            request.session['save_info'] = 'save-info' in request.POST
+            #request.session['save_info'] = 'save-info' in request.POST
+            request.session['save_info'] = False
             return redirect(
                 reverse('checkout_success', args=[order.order_number])
             )
@@ -100,7 +101,7 @@ def checkout(request):
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret_key': intent.client_secret,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)

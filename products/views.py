@@ -112,7 +112,7 @@ def delete_review(request, uid):
     return HttpResponseRedirect(reverse('view_book', args=[book.uid]))
 
 
-def hide_review(request, ui):
+def hide_review(request, uid):
     """
     View function to handle hide review requests
     """

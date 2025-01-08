@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-artambdev-tomeshack-8hy649ycxsi.ws-eu117.gitpod.io', '.herokuapp.com']
 
@@ -177,9 +177,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Stripe-related settings
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = "sk_test_51Qei1UGg8jD4swDEx5P5RlXZBAi9ROVyIA2BgBz3qEgJVOwLmi84TNBRS68T9KHRxijsR7u3ju5mKO0VTSwUwYuv00VqUhmNu8"
-#STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = "whsec_tfoSMuOoZ9mL0Vir92TJWu0hL0QBrU2W"
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

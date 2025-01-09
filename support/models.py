@@ -7,6 +7,9 @@ class Ticket(models.Model):
     """
     Class to define the support ticket model
     """
+    creator = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="created_tickets"
+    )
     requester_email = models.EmailField(max_length=254)
     uid = models.SlugField(max_length=200, default=None, null=True)
     name = models.TextField(max_length=30)

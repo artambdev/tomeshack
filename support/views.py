@@ -17,7 +17,7 @@ def create_ticket(request):
         if ticket_form.is_valid():
             new_ticket = ticket_form.save(commit=False)
             new_ticket.uid = uuid.uuid4().hex.upper()
-            new_ticket.author = request.user
+            new_ticket.creator = request.user
             new_ticket.resolved = False
             new_ticket.save()
             messages.add_message(

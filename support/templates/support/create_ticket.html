@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mb-2">
+    <div class="row card">
+        <div class="col-8 col-md-7 my-auto card-body">
+            <h1 class="display-4 logo-font text-black">
+                Create A New Support Ticket
+            </h1>
+            <p>
+                Please fill in your information, including the problem you're having and your order number (if applicable).
+                A site administrator will help you as soon as possible.
+            </p>
+
+            <form id="ticket-form" method="post">
+            {{ feedback_form | crispy }}
+            {% csrf_token %}
+            <button id="submit-button" type="submit"
+                class="btn btn-signup btn-lg">Submit Post</button>
+            </form>
+        </div>
+    </div>
+</div>

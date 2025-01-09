@@ -10,16 +10,16 @@
             <div class="card-body">
                 <!-- Ticket information -->
                 <h2 class="card-title">{{ ticket.title }}</h2>
-                <p class="card-text">Created by you ({{ticket.requestor_email}})</p>
+                <p class="card-text">Created by you ({{ticket.requester_email}})</p>
                 <p class="card-text">Status: {{ ticket.get_resolved_str }}</p>
                 <p class="card-text">{{ ticket.content }}</p>
 
-                {% if user.is_authenticated and user.is_superuser and not post.hidden %}
-                <a href="{% url 'resolve_post' ticket.uid %}">
+                {% if user.is_authenticated and user.is_superuser and not ticket.resolved %}
+                <a href="{% url 'resolve_ticket' ticket.uid %}">
                     <button class="btn">Resolve</button>
                 </a>
-                {% elif user.is_authenticated and user.is_superuser and post.hidden %}
-                <a href="{% url 'resolve_post' ticket.uid %}">
+                {% elif user.is_authenticated and user.is_superuser and ticket.resolved %}
+                <a href="{% url 'resolve_ticket' ticket.uid %}">
                     <button class="btn">Reopen</button>
                 </a>
                 {% endif %}
@@ -52,7 +52,7 @@
             {% for response in responses %}
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">{{ response.author }} replied:</h3>
+                    <h3 class="card-title">{{ response.responder }} replied:</h3>
                     <p class="card-text">{{ response.content }}</p>
                     <p class="card-text">At {{ response.posted_on }}</p>
                 </div>

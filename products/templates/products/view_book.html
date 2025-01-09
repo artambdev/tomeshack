@@ -106,14 +106,23 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">{{ review.author }}:</h3>
+                    {% if review.hidden %}
+                    <p class="card-text">(Hidden)</p>
+                    {% endif %}
                     <p class="card-text">{{ review.content }}</p>
                     <p class="card-text">Written on {{ review.created_on }}</p>
                     {% if user.is_authenticated and user.is_superuser %}
                     <a href="{% url 'delete_review' review.uid %}">
                         <button class="btn delete-button"><i class="fa-solid fa-trash"></i> Delete</button>
                     </a>
+                    {% endif %}
+                    {% if user.is_authenticated and user.is_superuser and not review.hidden %}
                     <a href="{% url 'hide_review' review.uid %}">
                         <button class="btn"><i class="fa-solid fa-eye-slash"></i> Hide</button>
+                    </a>
+                    {% elif user.is_authenticated and user.is_superuser and review.hidden %}
+                    <a href="{% url 'hide_review' review.uid %}">
+                        <button class="btn"><i class="fa-solid fa-eye-slash"></i> Unhide</button>
                     </a>
                     {% endif %}
                 </div>

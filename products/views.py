@@ -124,7 +124,7 @@ def hide_review(request, uid):
         review.hidden = not review.hidden
         review.save()
         message_string = "Review successfully hidden"
-        if not post.hidden:
+        if not review.hidden:
             message_string = "Review successfully unhidden"
         messages.add_message(
             request, messages.SUCCESS,

@@ -10,7 +10,7 @@
                 Support Center
             </h1>
             <p class="px-2">
-                <a href="{% url 'support/create' %}">Create New Ticket</a>
+                <a href="{% url 'create_ticket' %}">Create New Ticket</a>
             </p>
         </div>
     </div>
@@ -22,7 +22,7 @@
             <div class="card-body">
                 <a href="{% url 'view_ticket' ticket.uid %}">
                     <h2 class="card-title">{{ ticket.name }}</h2>
-                    <p class="card-text">Created by {{ ticket.creator }} ({{ticket.requestor_email}})</p>
+                    <p class="card-text">Created by {{ ticket.creator }} ({{ticket.requester_email}})</p>
                     <p class="card-text">Status: {{ ticket.get_resolved_str }}</p>
                     <p class="card-text"><i class="fa-regular fa-comments"></i>  {{ ticket.get_num_responses_str }}</p>
                 </a>
@@ -39,7 +39,7 @@
             <div class="card-body">
                 <a href="{% url 'view_ticket' ticket.uid %}">
                     <h2 class="card-title">{{ ticket.name }}</h2>
-                    <p class="card-text">Created by you ({{ticket.requestor_email}})</p>
+                    <p class="card-text">Created by you ({{ticket.requester_email}})</p>
                     <p class="card-text">Status: {{ ticket.get_resolved_str }}</p>
                     <p class="card-text"><i class="fa-regular fa-comments"></i>  {{ ticket.get_num_responses_str }}</p>
                 </a>

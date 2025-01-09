@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-9 col-lg-8 card">
+            <div class="card-body">
+                <!-- Ticket information -->
+                <h2 class="card-title">{{ ticket.title }}</h2>
+                <p class="card-text">Created by you ({{ticket.requestor_email}})</p>
+                <p class="card-text">Status: {{ ticket.get_resolved_str }}</p>
+                <p class="card-text">{{ ticket.content }}</p>
+
+                {% if user.is_authenticated and user.is_superuser and not post.hidden %}
+                <a href="{% url 'resolve_post' ticket.uid %}">
+                    <button class="btn">Resolve</button>
+                </a>
+                {% elif user.is_authenticated and user.is_superuser and post.hidden %}
+                <a href="{% url 'resolve_post' ticket.uid %}">
+                    <button class="btn">Reopen</button>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Responses section -->
+<div class="container">
+    {% if num_responses >= 1 %}
+    <!-- Header if there are responses -->
+    <div class="row">
+        <div class="col-12 col-md-8 card justify-content-center">
+            <h1>Responses</h2>
+        </div>
+    </div>
+    {% else %}
+    <!-- Heading if no responses available -->
+    <div class="row">
+        <div class="col-12 col-md-8 card justify-content-center">
+            <h1>No responses yet...</h1>
+            <h2>Our support team will be in touch soon!</h2>
+        </div>
+    </div>
+    {% endif %}
+    <!-- Show a list of the responses posted -->
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mb-4 mt-3">
+            {% for response in responses %}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">{{ response.author }} replied:</h3>
+                    <p class="card-text">{{ response.content }}</p>
+                    <p class="card-text">At {{ response.posted_on }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <!-- Form to write and submit responses -->
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mb-4 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title"><i class="fa-regular fa-star"></i> Leave New Response</h2>
+                    <form id="post-form" method="post">
+                        {{ response_form | crispy }}
+                        {% csrf_token %}
+                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

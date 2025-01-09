@@ -26,6 +26,24 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f'"{self.content[:15]}..." | requested by {self.name}'
+    
+    def get_resolved_str(self):
+        """
+        Returns a string describing if the ticket is resolved or not
+        """
+        if self.resolved:
+            return 'Resolved'
+        return 'Open'
+    
+    def get_num_responses_str(self):
+        """
+        Returns the number of ticket responses
+        """
+        num_responses = self.responses.count()
+        response_or_responses = "responses"
+        if num_responses == 1:
+            response_or_responses = "response"
+        return f'{num_responses} {response_or_responses}'
 
 
 class TicketResponse(models.Model):

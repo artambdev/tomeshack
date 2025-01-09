@@ -64,7 +64,6 @@ form.addEventListener('submit', function(ev) {
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
-        console.log("yippee");
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
@@ -94,23 +93,19 @@ form.addEventListener('submit', function(ev) {
                 }
             },
         }).then(function(result) {
-            console.log(result)
-            console.log("yippee!!!");
             if (result.error) {
-                console.log("oh no");
-                var errorDiv = document.getElementById('card-errors');
                 var html = `
                     <span class="icon" role="alert">
                     <i class="fas fa-times"></i>
                     </span>
                     <span>${result.error.message}</span>`;
-                $(errorDiv).html(html);
+                document.getElementById('card-errors').innerHTML = html;
                 card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
             } else {
-                //if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
-                //}
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
             };
         });
     }).fail(function () {

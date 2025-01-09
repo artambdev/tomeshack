@@ -7,6 +7,21 @@ from .models import Ticket, TicketResponse
 from .forms import TicketForm
 
 
+def view_tickets(request):
+
+    tickets = Ticket.objects.all()
+    query = None
+
+    if not request.user.is_superuser:
+        tickets = Ticket.objects.filter(creator=request.user)
+
+    context = {
+        'tickets': tickets,
+    }
+
+    return render(request, 'support/tickets.html', context)
+
+
 def create_ticket(request):
     """
     View function to handle rendering of ticket creation page

@@ -13,7 +13,6 @@ import stripe
 def webhook(request):
     # Get the webhook data and verify its signature
     wh_secret = settings.STRIPE_WH_SECRET
-    print(wh_secret)
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     payload = request.body

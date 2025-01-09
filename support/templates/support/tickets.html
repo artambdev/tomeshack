@@ -1,13 +1,53 @@
 {% extends "base.html" %}
+
 {% load static %}
 
 {% block content %}
 <div class="container mb-2">
-    <div class="row card">
+    <div class="row justify-content-center card">
         <div class="col-8 col-md-7 my-auto card-body">
             <h1 class="display-4 logo-font text-black">
                 Support Center
             </h1>
+            <p class="px-2">
+                <a href="{% url 'support/create' %}">Create New Ticket</a>
+            </p>
         </div>
     </div>
+
+    {% if user.is_authenticated and user.is_superuser %}
+    <div class="row book-list justify-content-center">
+        {% for ticket in tickets %}
+        <div class="col-md-11 card">
+            <div class="card-body">
+                <a href="{% url 'view_ticket' ticket.uid %}">
+                    <h2 class="card-title">{{ ticket.name }}</h2>
+                    <p class="card-text">Created by {{ ticket.creator }} ({{ticket.requestor_email}})</p>
+                    <p class="card-text">Status: {{ ticket.get_resolved_str }}</p>
+                    <p class="card-text"><i class="fa-regular fa-comments"></i>  {{ ticket.get_num_responses_str }}</p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if user.is_authenticated and not user.is_superuser %}
+    <div class="row book-list justify-content-center">
+        {% for ticket in tickets %}
+        <div class="col-md-11 card">
+            <div class="card-body">
+                <a href="{% url 'view_ticket' ticket.uid %}">
+                    <h2 class="card-title">{{ ticket.name }}</h2>
+                    <p class="card-text">Created by you ({{ticket.requestor_email}})</p>
+                    <p class="card-text">Status: {{ ticket.get_resolved_str }}</p>
+                    <p class="card-text"><i class="fa-regular fa-comments"></i>  {{ ticket.get_num_responses_str }}</p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </div>
+
+{% endblock content %}

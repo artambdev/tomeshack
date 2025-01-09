@@ -8,7 +8,15 @@ class TicketForm(forms.ModelForm):
     """
     class Meta:
         model = Ticket
-        fields = ('requester_email', 'name', 'title', 'content')
+        fields = ('requester_email', 'name', 'title', 'content',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # this is the magic right here:
+        self.fields['requester_email'].label = "Your email:"
+        self.fields['name'].label = "Your name:"
+        self.fields['title'].label = "Issue you're having:"
+        self.fields['content'].label = "Details:"
 
 
 class TicketResponseForm(forms.ModelForm):
@@ -17,4 +25,4 @@ class TicketResponseForm(forms.ModelForm):
     """
     class Meta:
         model = TicketResponse
-        fields = ('content')
+        fields = ('content',)

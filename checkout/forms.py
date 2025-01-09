@@ -30,6 +30,9 @@ def __init__(self, *args, **kwargs):
     }
 
     self.fields['full_name'].widget.attrs['autofocus'] = True
+    self.fields['country'].label = "Country code (e.g US, IE)"
+    self.fields['street_address1'].label = "Street address (line 1)"
+    self.fields['street_address2'].label = "Street address (line 2)"
     for field in self.fields:
         if self.fields[field].required:
             placeholder = f'{placeholders[field]} *'

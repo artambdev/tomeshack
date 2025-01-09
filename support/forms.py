@@ -12,7 +12,6 @@ class TicketForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # this is the magic right here:
         self.fields['requester_email'].label = "Your email:"
         self.fields['name'].label = "Your name:"
         self.fields['title'].label = "Issue you're having:"
